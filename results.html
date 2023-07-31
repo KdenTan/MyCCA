@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        document.write("<h2>Your form has been submitted!</h2><p>You entered the following data</p>");
+        var resultsList = location.search;
+
+        resultsList = resultsList.substring(1, resultsList.length);
+        while (resultsList.indexOf("+") !=-1) {
+            resultsList - resultsList.replace("+", " ");
+        }
+        resultsList = unescape(resultsList);
+        var resultArray = resultsList.split("&");
+        for (var i=0; i < resultArray.length; ++i ) {
+            document.write(resultArray[i] + "<br>")
+        }
+    </script>
+    <p><a href="index.html">Click</a> this to head back to home</p>
+</body>
+</html>
